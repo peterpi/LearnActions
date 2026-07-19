@@ -8,3 +8,4 @@ jobs:
     steps:
       - run: echo This is a step within a job.
       - run: uname -a
+      - uses: actions/checkout@v7.0.0
