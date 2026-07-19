@@ -6,7 +6,7 @@ jobs:
   PetersJob:
     runs-on: ubuntu-latest
     steps:
-      - run: echo This is a step within a job on ${{github.ref.name}}
+      - run: echo This is a step within a job on ${{github.ref_name}}
       - run: uname -a
       - uses: actions/checkout@v7.0.0
       - run: find .
