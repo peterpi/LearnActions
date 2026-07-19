@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   PetersJob:
-    runs-on: ubuntu-slim
+    runs-on: ubuntu-latest
     steps:
       - run: echo This is a step within a job.
       - run: uname -a
