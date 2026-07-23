@@ -9,9 +9,5 @@ jobs:
       - run: echo This is a step within a job on ${{github.ref_name}}
       - run: uname -a
       - with:
-          DOCKER_HUB_PAT: ${{ secrets.ENV_DOCKER_HUB_PAT }}
-        run: echo "$INPUT_DOCKER_HUB_PAT" | docker login -u peterpimley
-      - uses: actions/checkout@v7.0.0
-      - run: find .
-      - run: docker build -t test:latest .
-      - run: ./test.sh
+          MY_ENV_VAR: "This is an env var"
+        run: echo $INPUT_MY_ENV_VAR
