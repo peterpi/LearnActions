@@ -8,10 +8,9 @@ jobs:
     steps:
       - run: echo This is a step within a job on ${{github.ref_name}}
       - run: uname -a
-      - name: Log in to Docker Hub
-        with:
+      - with:
           DOCKER_HUB_PAT: ${{ secrets.ENV_DOCKER_HUB_PAT }}
-        run: echo "$DOCKER_HUB_PAT" | docker login -u peterpimley
+        run: echo "$INPUT_DOCKER_HUB_PAT" | docker login -u peterpimley
       - uses: actions/checkout@v7.0.0
       - run: find .
       - run: docker build -t test:latest .
