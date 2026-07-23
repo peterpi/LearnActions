@@ -8,6 +8,8 @@ jobs:
     steps:
       - run: echo This is a step within a job on ${{github.ref_name}}
       - run: uname -a
+      - uses: actions/checkout@v7.0.0
       - env:
+          DOCKER_HUB_PAT: ${{ secrets.ENV_DOCKER_HUB_PAT }}
           MY_ENV_VAR: "This is an env var"
-        run: echo $MY_ENV_VAR
+        run: echo $DOCKER_HUB_PATH | docker login -u peterpimley
