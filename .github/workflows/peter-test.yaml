@@ -10,4 +10,4 @@ jobs:
       - run: uname -a
       - env:
           MY_ENV_VAR: "This is an env var"
-        run: echo $INPUT_MY_ENV_VAR
+        run: echo $MY_ENV_VAR
