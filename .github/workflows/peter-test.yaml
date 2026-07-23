@@ -8,6 +8,6 @@ jobs:
     steps:
       - run: echo This is a step within a job on ${{github.ref_name}}
       - run: uname -a
-      - with:
+      - env:
           MY_ENV_VAR: "This is an env var"
         run: echo $INPUT_MY_ENV_VAR
