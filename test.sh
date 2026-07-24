@@ -1,5 +1,12 @@
+set -e
 echo This is from a shell script.
 
-echo $DOCKER_HUB_PATH | docker login --password-stdin -u peterpimley
 
-docker build -t learnactions:$GITHUB_REF_NAME .
+IMAGE_TAG=peterpimley/learnactions:$GITHUB_REF_NAME
+
+# Build.
+docker build -t $IMAGE_TAG .
+
+# Log in and push.
+echo $DOCKER_HUB_PAT | docker login --password-stdin -u peterpimley
+docker push $IMAGE_TAG
