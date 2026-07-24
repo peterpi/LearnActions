@@ -12,4 +12,4 @@ jobs:
       - env:
           DOCKER_HUB_PAT: ${{ secrets.ENV_DOCKER_HUB_PAT }}
           MY_ENV_VAR: "This is an env var"
-        run: echo $DOCKER_HUB_PAT | docker login --password-stdin -u peterpimley
+        run: test.sh
